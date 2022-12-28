@@ -1,0 +1,43 @@
+#To know if the api server can accept this manifest from you or it's not supported
+#To make sure the version of your manifest is compatible with the version of your cluster
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: ms-a
+
+  labels:
+
+    app: ms-a
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: ms-a
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: ms-a
+
+    spec:
+
+      containers:
+
+      - name: ms-a
+
+        image: amalmissaoui9/ms-a
+
+        ports:
+
+        - containerPort: 3000
